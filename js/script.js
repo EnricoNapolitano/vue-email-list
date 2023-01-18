@@ -14,3 +14,13 @@ in modo da individuare la sintassi corretta per recuperare i dati che vi servono
 */
 
 console.log(Vue);
+
+const app = Vue.createApp({
+    data(){
+        return {
+            emails : [],
+        }
+    }
+});
+
+app.mount('#root');
