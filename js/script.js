@@ -31,11 +31,11 @@ const app = Vue.createApp({
             .then((response)=>{
                 this.emails.push(response.data.response);
                
-                // changing flag value if array's less than 10 elements
+                // changing flag value if array gets 10 elements
                 if (this.emails.length === 10) this.isLoading = false;
 
-            }).catch(()=>{
-                this.error = 'Alert: c\'è un errore';
+            }).catch((error)=>{
+                this.error = error;
                
                 // changig flag value if there's an error
                 this.isLoading = false;
