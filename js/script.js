@@ -19,6 +19,7 @@ const app = Vue.createApp({
     data(){
         return {
             emails : [],
+            isLoading : true, //flag
         }
     },
     methods: {
@@ -27,6 +28,9 @@ const app = Vue.createApp({
             axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
             .then((response)=>{
                 this.emails.push(response.data.response);
+    
+                // changing status flag
+                if (this.emails.length === 10) this.isLoading = false;
             })
         }
     },
@@ -34,7 +38,7 @@ const app = Vue.createApp({
         //for cycle to generate 10 times the email
         for(i=0; i < 10; i++) {
             this.getRandomEmails();
-        }
+        };
     }
 });
 

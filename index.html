@@ -15,7 +15,8 @@
 <body>
 
     <div id="root">
-        <ul>
+        <div v-if="isLoading">It's Loading...</div>
+        <ul v-else>
             <li v-for="email in emails"> {{ email }} </li>
         </ul>
     </div>
