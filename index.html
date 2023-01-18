@@ -21,7 +21,7 @@
     <div id="root" class="container pt-5">
         <div v-if="error && !isLoading" class="alert alert-danger">{{ error }}</div>
         <div v-if="isLoading">
-            <i class="fa-solid fa-spinner"></i> <b>It's Loading...</b>
+            <i class="fa-solid fa-spinner"></i> <b>Loading...</b>
         </div>
         <ul v-else>
             <li v-for="email in emails"> {{ email }} </li>
