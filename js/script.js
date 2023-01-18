@@ -22,6 +22,7 @@ const app = Vue.createApp({
         }
     },
     methods: {
+        //method to get emails by boolean's api
         getRandomEmails() {
             axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
             .then((response)=>{
@@ -30,6 +31,7 @@ const app = Vue.createApp({
         }
     },
     mounted() {
+        //for cycle to generate 10 times the email
         for(i=0; i < 10; i++) {
             this.getRandomEmails();
         }
