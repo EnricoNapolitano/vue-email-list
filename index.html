@@ -7,6 +7,8 @@
     <title>Vue Email List</title>
     <!-- font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <!-- vue js -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <!-- axios -->
@@ -16,10 +18,10 @@
 </head>
 <body>
 
-    <div id="root">
-        <div v-if="error && !isLoading">{{ error }}</div>
+    <div id="root" class="container pt-5">
+        <div v-if="error && !isLoading" class="alert alert-danger">{{ error }}</div>
         <div v-if="isLoading">
-            <i class="fa-solid fa-spinner"></i> It's Loading...
+            <i class="fa-solid fa-spinner"></i> <b>It's Loading...</b>
         </div>
         <ul v-else>
             <li v-for="email in emails"> {{ email }} </li>
