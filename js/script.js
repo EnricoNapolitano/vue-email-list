@@ -18,6 +18,7 @@ console.log(Vue);
 const app = Vue.createApp({
     data(){
         return {
+            emailURI : 'https://flynn.boolean.careers/exercises/api/random/mail',
             emails : [],
             isLoading : true, //flag
             error : '',
@@ -26,7 +27,7 @@ const app = Vue.createApp({
     methods: {
         //method to get emails by boolean's api
         getRandomEmails() {
-            axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
+            axios.get(this.emailURI)
             .then((response)=>{
                 this.emails.push(response.data.response);
                
