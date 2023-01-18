@@ -29,11 +29,14 @@ const app = Vue.createApp({
             axios.get('https://flynn.boolean.careers/exercises/api/random/mal')
             .then((response)=>{
                 this.emails.push(response.data.response);
-    
-                // changing status flag
+               
+                // changing flag value if array's less than 10 elements
                 if (this.emails.length === 10) this.isLoading = false;
+
             }).catch(()=>{
                 this.error = 'Alert: c\'è un errore';
+               
+                // changig flag value if there's an error
                 this.isLoading = false;
             })
         }
