@@ -20,17 +20,21 @@ const app = Vue.createApp({
         return {
             emails : [],
             isLoading : true, //flag
+            error : '',
         }
     },
     methods: {
         //method to get emails by boolean's api
         getRandomEmails() {
-            axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
+            axios.get('https://flynn.boolean.careers/exercises/api/random/mal')
             .then((response)=>{
                 this.emails.push(response.data.response);
     
                 // changing status flag
                 if (this.emails.length === 10) this.isLoading = false;
+            }).catch(()=>{
+                this.error = 'Alert: c\'è un errore';
+                this.isLoading = false;
             })
         }
     },

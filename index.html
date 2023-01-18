@@ -17,6 +17,7 @@
 <body>
 
     <div id="root">
+        <div v-if="error && !isLoading">{{ error }}</div>
         <div v-if="isLoading">
             <i class="fa-solid fa-spinner"></i> It's Loading...
         </div>
