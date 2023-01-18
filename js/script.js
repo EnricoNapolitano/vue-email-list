@@ -35,7 +35,7 @@ const app = Vue.createApp({
                 if (this.emails.length === 10) this.isLoading = false;
 
             }).catch((error)=>{
-                this.error = error;
+                this.error = 'Alert: ' + error.message.toLowerCase();
                
                 // changig flag value if there's an error
                 this.isLoading = false;
