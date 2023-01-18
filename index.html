@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vue Email List</title>
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- vue js -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <!-- axios -->
@@ -15,7 +17,9 @@
 <body>
 
     <div id="root">
-        <div v-if="isLoading">It's Loading...</div>
+        <div v-if="isLoading">
+            <i class="fa-solid fa-spinner"></i> It's Loading...
+        </div>
         <ul v-else>
             <li v-for="email in emails"> {{ email }} </li>
         </ul>
