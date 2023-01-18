@@ -20,6 +20,14 @@ const app = Vue.createApp({
         return {
             emails : [],
         }
+    },
+    methods: {
+        getRandomEmails() {
+            axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
+            .then((response)=>{
+                this.emails.push(response.data.response);
+            })
+        }
     }
 });
 
